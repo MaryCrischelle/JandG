@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const guestList = {
         // Table 1
         "jeslee gloriane": 1,
-        "jeslee": 1,
-        "gloriane": 1,
+        "hakdog": 1,
+        "hello": 1,
         "mary crischelle": 1,
         "mary": 1,
         "crischelle": 1,
