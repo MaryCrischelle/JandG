@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tableFinderForm = document.getElementById('tableFinder');
     const resultSection = document.getElementById('resultSection');
-    const toggleDebugBtn = document.getElementById('toggleDebug');
     const debugInfo = document.getElementById('debugInfo');
     const availableNames = document.getElementById('availableNames');
     
@@ -51,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
         normalizedGuestList[normalized] = tableNumber;
     }
     
-    // Populate debug panel with available names
-    function populateDebugPanel() {
+    // Initialize the available names list (but keep it hidden)
+    function populateAvailableNames() {
         const nameListDiv = document.createElement('div');
         nameListDiv.className = 'name-list';
         
@@ -70,16 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
         availableNames.appendChild(nameListDiv);
     }
     
-    // Toggle debug panel visibility
-    toggleDebugBtn.addEventListener('click', () => {
-        debugInfo.classList.toggle('hidden');
-        toggleDebugBtn.textContent = debugInfo.classList.contains('hidden') ? 
-            'Show Debug Info' : 'Hide Debug Info';
-        
-        if (!debugInfo.classList.contains('hidden')) {
-            populateDebugPanel();
-        }
-    });
+    // Initialize the name list
+    populateAvailableNames();
     
     tableFinderForm.addEventListener('submit', (e) => {
         e.preventDefault();
