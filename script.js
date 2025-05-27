@@ -6,52 +6,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // In a real application, this could be loaded from a JSON file or API
     const guestList = {
         // Table 1
-        "john smith": 1,
-        "jane smith": 1,
-        "michael johnson": 1,
-        "sarah johnson": 1,
+        "jeslee gloriane": 1,
+        "jeslee": 1,
+        "gloriane": 1,
+        "mary crischelle": 1,
+        "crischelle": 1,
         
         // Table 2
-        "robert williams": 2,
-        "emily williams": 2,
-        "david brown": 2,
-        "jennifer brown": 2,
+        "grace rapada": 2,
+        "grace": 2,
+        "rapada": 2,
+        "john doe": 2,
+        "jane doe": 2,
         
         // Table 3
-        "james davis": 3,
-        "mary davis": 3,
-        "william miller": 3,
-        "patricia miller": 3,
+        "jerven gloriane": 3,
+        "jerven": 3,
+        "james smith": 3,
+        "sarah johnson": 3,
         
         // Table 4
-        "richard wilson": 4,
-        "linda wilson": 4,
-        "thomas moore": 4,
-        "barbara moore": 4,
+        "michael brown": 4,
+        "jennifer davis": 4,
+        "robert wilson": 4,
+        "lisa moore": 4,
         
         // Table 5
-        "joseph taylor": 5,
-        "elizabeth taylor": 5,
-        "charles anderson": 5,
-        "margaret anderson": 5,
-        
-        // Table 6
-        "christopher thomas": 6,
-        "susan thomas": 6,
-        "daniel jackson": 6,
-        "nancy jackson": 6,
-        
-        // Table 7
-        "matthew white": 7,
-        "lisa white": 7,
-        "anthony harris": 7,
-        "karen harris": 7,
-        
-        // Table 8
-        "mark martin": 8,
-        "betty martin": 8,
-        "donald thompson": 8,
-        "dorothy thompson": 8
+        "william taylor": 5,
+        "elizabeth thomas": 5,
+        "david anderson": 5,
+        "patricia white": 5
     };
     
     tableFinderForm.addEventListener('submit', (e) => {
@@ -68,14 +52,35 @@ document.addEventListener('DOMContentLoaded', () => {
     function findTable(guestName) {
         // First try exact match
         let tableNumber = guestList[guestName];
+        let matchedName = guestName;
         
-        // If no exact match, try to find a partial match
+        // If no exact match, try more flexible matching
         if (!tableNumber) {
-            // Check if the entered name is part of any guest name in the list
-            for (const guest in guestList) {
-                if (guest.includes(guestName) || guestName.includes(guest)) {
-                    tableNumber = guestList[guest];
-                    break;
+            // Try each word in the input separately
+            const nameWords = guestName.split(/\s+/);
+            for (const word of nameWords) {
+                if (word.length < 3) continue; // Skip very short words
+                
+                for (const guest in guestList) {
+                    if (guest.includes(word)) {
+                        tableNumber = guestList[guest];
+                        matchedName = guest;
+                        break;
+                    }
+                }
+                
+                if (tableNumber) break; // Stop if we found a match
+            }
+            
+            // If still no match, try more aggressive matching
+            if (!tableNumber) {
+                for (const guest in guestList) {
+                    // Check if any part of the guest name matches any part of the input
+                    if (guest.includes(guestName) || guestName.includes(guest)) {
+                        tableNumber = guestList[guest];
+                        matchedName = guest;
+                        break;
+                    }
                 }
             }
         }
