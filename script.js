@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const debugInfo = document.getElementById('debugInfo');
     const availableNames = document.getElementById('availableNames');
     
-    // Sample guest list with table assignments
-    // In a real application, this could be loaded from a JSON file or API
+
     const guestList = {
         // Table 1
         "jeslee gloriane": 1,
