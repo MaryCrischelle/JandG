@@ -7,12 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const guestList = {
         // Table 1
-        "jeslee gloriane": 1,
-        "hakdog": 1,
-        "hello": 1,
-        "mary crischelle": 1,
-        "mary": 1,
-        "crischelle": 1,
+        "Condrado Ventura": 1,
+        "Jery Ventura": 1,
+        "Jerell Ventura": 1,
+        "Jerry Ventura Jr.": 1,
+        "Glen Ventura": 1,
+        "Jennelyn Ventura": 1,
+        "Rene Ventura": 1,
+        "Mayline David Ventura": 1,
+        "Henry Ventura": 1,
         
         // Table 2
         "grace rapada": 2,
