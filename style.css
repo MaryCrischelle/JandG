@@ -9,11 +9,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px;
+  margin: 0;
 }
 
 .container {
   background: white;
-  padding: 30px;
+  padding: 20px;
   border-radius: 16px;
   width: 100%;
   max-width: 400px;
@@ -23,25 +25,29 @@ body {
 
 h1 {
   color: #3f72ac;
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
+  font-size: clamp(20px, 5vw, 28px);
 }
 
 p {
   color: #555;
+  margin: 10px 0;
+  font-size: clamp(14px, 4vw, 16px);
 }
 
 input {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   margin-top: 15px;
   border-radius: 10px;
   border: 1px solid #ccc;
   outline: none;
+  font-size: 16px;
 }
 
 button {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   margin-top: 15px;
   background: #3f72ac;
   color: white;
@@ -49,14 +55,23 @@ button {
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
 }
 
 button:hover {
-  background: #3f72ac;
+  background: #2d5a8c;
 }
 
 #result {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: clamp(14px, 4vw, 18px);
   color: #333;
+  word-wrap: break-word;
+}
+
+/* Tablet and larger */
+@media (min-width: 768px) {
+  .container {
+    padding: 30px;
+  }
 }
