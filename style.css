@@ -5,41 +5,45 @@
 
 body {
   background: linear-gradient(135deg, #6385ab, #9b9a99);
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 10px;
   margin: 0;
+  overflow: hidden;
 }
 
 .container {
   background: white;
-  padding: 20px;
+  padding: 15px;
   border-radius: 16px;
   width: 100%;
   max-width: 400px;
   text-align: center;
   box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 h1 {
   color: #3f72ac;
-  margin: 0 0 10px 0;
-  font-size: clamp(20px, 5vw, 28px);
+  margin: 0 0 5px 0;
+  font-size: clamp(18px, 5vw, 24px);
+  line-height: 1.2;
 }
 
 p {
   color: #555;
-  margin: 10px 0;
-  font-size: clamp(14px, 4vw, 16px);
+  margin: 5px 0 10px 0;
+  font-size: clamp(12px, 3vw, 14px);
 }
 
 input {
   width: 100%;
-  padding: 14px;
-  margin-top: 15px;
-  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   outline: none;
   font-size: 16px;
@@ -47,14 +51,14 @@ input {
 
 button {
   width: 100%;
-  padding: 14px;
-  margin-top: 15px;
+  padding: 10px;
+  margin-top: 10px;
   background: #3f72ac;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -63,10 +67,11 @@ button:hover {
 }
 
 #result {
-  margin-top: 20px;
-  font-size: clamp(14px, 4vw, 18px);
+  margin-top: 10px;
+  font-size: clamp(12px, 3vw, 16px);
   color: #333;
   word-wrap: break-word;
+  line-height: 1.4;
 }
 
 /* Tablet and larger */
